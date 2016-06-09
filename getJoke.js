@@ -1,11 +1,11 @@
-//$(document).on('click', 'a.Another Joke', handleThis);
+$('body').on('click', '#anotherJoke', doSomething);
 
 var url = 'http://api.icndb.com/jokes/random';
 
-function doSomething() {
+function doSomething(ev) {
   console.log('Yaaaa');
-  // ev.preventDefault();
-  // ev.currentTarget;
+  ev.preventDefault();
+  ev.currentTarget;
   $.get({
     url: url,
     success: addJokes
