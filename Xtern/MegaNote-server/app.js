@@ -1,13 +1,17 @@
 require('dotenv').load();
 
 var express = require('express');
-var db = require('mongoose');
-
-db.connect(process.env.DB_URI);
+var db = require('./config/db');
 var app = express();
 
-var NoteSchema = db.Schema();
-var Note = db.model('Note', { title: String });
+var noteSchema = db.Schema({
+  title: String,
+  Body_html: String,
+  body_text: String,
+  updated_at: {type: Date, default: Date.now}
+});
+
+var Note = db.model('Note', noteSchema);
 
 app.get('/', function(req, res){
   Note.find().then(function(notes){
