@@ -11,5 +11,6 @@ app.get('/', function(req, res){
 
 
 app.listen(3030, function() {
+console.log('DB: ' + process.env.DB_URI);
   console.log('Listening on http://localhost:3030...');
 });
