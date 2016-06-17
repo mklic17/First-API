@@ -1,17 +1,14 @@
 require('dotenv').load();
 
 var express = require('express');
-var db = require('./config/db');
+var Note = require('./models/note');
+
 var app = express();
 
-var noteSchema = db.Schema({
-  title: String,
-  Body_html: String,
-  body_text: String,
-  updated_at: {type: Date, default: Date.now}
+app.use(function(req, res, next){
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
 });
-
-var Note = db.model('Note', noteSchema);
 
 app.get('/', function(req, res){
   Note.find().then(function(notes){
@@ -20,6 +17,6 @@ app.get('/', function(req, res){
 });
 
 app.listen(3030, function() {
-console.log('DB: ' + process.env.DB_URI);
+// console.log('DB: ' + process.env.DB_URI);
   console.log('Listening on http://localhost:3030...');
 });
