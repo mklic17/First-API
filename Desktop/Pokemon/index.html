@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="content/foundation.min.css">
+    <link rel="stylesheet" href="content/content.css">
+  </head>
+  <body>
+
+    <!-- Contains the whole left side of the screen -->
+    <div class="row" id="back">
+
+    <!-- The scrollable bar with the list of 151 pokemon -->
+       <div class="small-2 medium-3 columns">
+         <h5 id="title">List of Pokemon</h5>
+          <ul id="pokemonList">
+            <li class="template">
+                <a id="actualPokemon" class="addButton"></a>
+            </li>
+          </ul>
+      </div>
+
+      <!-- The entire div on the right side of the screen -->
+      <div class="small-10 medium-9 columns" id="farSide">
+
+        <!-- The top div that contains the picture and the description -->
+        <div id="pictureStats">
+          <img class="picture1">
+          <div id="descHelp">
+            <p id="description">Where is this</p>
+        </div>
+        </div>
+
+        <!-- The bottom div that contains the list of pokemon in your party -->
+        <div id="party">
+          <h4>Party</h4>
+          <ul id="newList">
+              <li class="imOverHere yaa">
+                <a id="pokeParty"></a>
+                <a class="removeButton">Remove</a>
+              </li>
+            </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+    <script src="app/test.js"></script>
+
+  </body>
+</html>
